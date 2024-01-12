@@ -9,6 +9,8 @@ const config = {
         adapter: adapter(),
         alias: {
             "$ui": "src/ui",
+            "$img": "src/img",
+            "$layout": "src/layout",
         },
     }
 };
