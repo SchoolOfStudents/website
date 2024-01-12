@@ -27,6 +27,7 @@
 		"@iconify/svelte": "^3.1.6",
 		"@svelteuidev/composables": "^0.15.4",
 		"@svelteuidev/core": "^0.15.4",
+		"katex": "^0.16.9",
 		"svelte-markdown": "^0.4.1"
 	}
 }
