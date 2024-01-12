@@ -14,13 +14,17 @@
 </script>
 
 <nav>
-	{#each sections as section}
-		<button on:click={() => scrollTo(section)}>
-			{section.text}
-		</button>
-	{/each}
-	<hr />
-	<button class="back-to-top" on:click={() => scrollTo(0)}>Back to top</button>
+	<div class="nav-content">
+		<p>On this page:</p>
+		<hr />
+		{#each sections as section}
+			<button on:click={() => scrollTo(section)}>
+				{section.text}
+			</button>
+		{/each}
+		<hr />
+		<button class="back-to-top" on:click={() => scrollTo(0)}>Back to top</button>
+	</div>
 </nav>
 
 <!-- Simulated content sections for the example -->
@@ -34,10 +38,18 @@
 		width: var(--navbar-width);
 	}
 
+	.nav-content {
+		position: sticky;
+		top: 50px;
+		border-left: 1px solid #fff;
+		padding: 0px 20px;
+		width: 80%;
+	}
+
 	nav hr {
 		border: none;
 		border-top: 1px solid #fff;
-		margin: 5px 120px 5px 20px;
+		margin: 5px 100px 5px 10px;
 	}
 
 	nav button {
@@ -45,8 +57,8 @@
 		border: none;
 		color: #fff;
 		font-size: 14px;
-		font-weight: 700;
-		padding: 10px 20px;
+		font-weight: 600;
+		padding: 10px 10px;
 		width: 80%;
 		text-align: left;
 		cursor: pointer;
@@ -59,6 +71,13 @@
 
 	.back-to-top {
 		font-size: 12px;
-		padding-left: 20px;
+	}
+
+	nav p {
+		font-size: 12px;
+		font-weight: 600;
+		color: #fff;
+		margin: 0;
+		padding: 10px;
 	}
 </style>
