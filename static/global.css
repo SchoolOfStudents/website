@@ -1,15 +1,15 @@
 :root {
     /* Color Scheme */
-    --primary-color: rgba(18, 18, 18, 0.95);
-    --secondary-color: rgba(18, 18, 18, 0.85);
+    --primary-color: rgba(18, 18, 18, 0.9);
+    --secondary-color: rgba(18, 18, 18, 0.8);
 
-    --font-color: rgba(202, 202, 202, 0.95);
+    --font-color: rgba(246, 246, 246, 0.95);
 
     --content-bg-color: var(--primary-color);
     --navbar-bg-color: var(--secondary-color);
 
     /* Dimensions */
-    --navbar-width: 300px;
+    --navbar-width: 270px;
     --alert-width: 20px;
 }
 

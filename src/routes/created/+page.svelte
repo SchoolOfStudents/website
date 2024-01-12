@@ -11,11 +11,7 @@
 		<MainNavbar slot="navbar-left" />
 
 		<div>
-			<Title>School of students</Title>
-			<Text>
-				We believe that only a student can explain to another student any topic in a format that is
-				understandable
-			</Text>
+			<Title>List of created couses</Title>
 		</div>
 	</Main>
 </main>

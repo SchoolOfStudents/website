@@ -4,38 +4,44 @@
 
 	import logo from '$img/favicon.png';
 	import profile from '$img/favicon.png';
+
+	import NavLink from './NavLink.svelte';
 </script>
 
 <Stack>
 	<div class="main">
-		<div class="logo">
-			<img src={logo} alt="logo" />
-			<p>School of Students</p>
-		</div>
+		<a href="/">
+			<div class="logo">
+				<img src={logo} alt="logo" />
+				<p>School of Students</p>
+			</div>
+		</a>
 
 		<div class="sidebar">
-			<a class="sidebar-item" href="/search">
+			<NavLink path="/search">
 				<Icon icon="ic:sharp-search" width="25px" height="25px" style="margin: 10px" />
-				<Text color="white">Search</Text>
-			</a>
+				<p>Search</p>
+			</NavLink>
 
-			<div class="sidebar-item">
+			<NavLink path="/courses">
 				<Icon icon="ic:baseline-dashboard" width="25px" height="25px" style="margin: 10px" />
-				<Text color="white">My Couses</Text>
-			</div>
-			<div class="sidebar-item">
+				<p>Courses</p>
+			</NavLink>
+
+			<NavLink path="/created">
 				<Icon icon="ic:baseline-plus" width="25px" height="25px" style="margin: 10px" />
-				<Text color="white">New Couses</Text>
-			</div>
-			<div class="sidebar-item">
+				<p>Created</p>
+			</NavLink>
+
+			<NavLink path="/settings">
 				<Icon icon="ic:baseline-settings" width="25px" height="25px" style="margin: 10px" />
-				<Text color="white">Settings</Text>
-			</div>
+				<p>Settings</p>
+			</NavLink>
 		</div>
 
 		<div class="profile">
 			<div class="profile-pic">
-				<img src={profile} alt="Profile Picture" />
+				<img src={profile} alt="Profile Picture" aria-hidden="true" />
 			</div>
 
 			<div class="user-info">
@@ -90,22 +96,7 @@
 		line-height: 24px;
 	}
 
-	.sidebar-item {
-		display: flex;
-		align-items: center;
-		margin-bottom: 10px;
-		cursor: pointer;
-		text-decoration: none;
-		color: #ffffff;
-	}
-
-	.sidebar-item:hover {
-		background-color: #333333;
-		border-radius: 4px;
-	}
-
 	/* Profile pic */
-
 	.profile {
 		position: absolute;
 		bottom: 10px;
