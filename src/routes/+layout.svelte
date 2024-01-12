@@ -13,7 +13,9 @@
 
 	<!-- Content -->
 	<div class="content">
-		<slot />
+		<div class="content-box">
+			<slot />
+		</div>
 	</div>
 
 	<!-- Right navbar -->
@@ -64,6 +66,11 @@
 		text-align: center;
 		padding: 20px;
 		background-color: var(--content-bg-color);
+	}
+
+	.content-box {
+		max-width: 700px;
+		margin: 0 auto;
 	}
 
 	@media screen and (max-width: 800px) {
