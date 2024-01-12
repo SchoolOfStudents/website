@@ -1,7 +1,9 @@
 <script>
 	import Main from '$layout/Main.svelte';
+	import Tabs from '$layout/Tabs.svelte';
+	import Tab from '$layout/Tab.svelte';
+
 	import MainNavbar from '$lib/MainNavbar.svelte';
-	import Content from '$layout/Content.svelte';
 	import OnThisPage from '$lib/OnThisPage.svelte';
 
 	import Title from '$ui/Title.svelte';
@@ -23,29 +25,48 @@
 	<Main>
 		<MainNavbar slot="navbar-left" />
 
-		<Content />
+		<script>
+		</script>
 
-		<div>
-			<Title>School of students</Title>
+		<Tabs defaultTab="Home">
+			<Tab title="Home" icon="ic:baseline-home">
+				<div>
+					<Title>School of students</Title>
 
-			<Text text="What can be done:" />
-			<Text text="- bold text, for example, *bold text*" />
-			<Text text="- italic text, for example, _italic text_" />
-			<Text text="- strikethrough text, for example, ~strikethrough text~" />
-			<Text text="- mark text, for example, !mark text!" />
+					<Text text="What can be done:" />
+					<Text text="- bold text, for example, *bold text*" />
+					<Text text="- italic text, for example, _italic text_" />
+					<Text text="- strikethrough text, for example, ~strikethrough text~" />
+					<Text text="- mark text, for example, !mark text!" />
 
-			<Equation math={equation} displayMode />
-			<Equation math={equation2} displayMode />
+					<Equation math={equation} displayMode />
+					<Equation math={equation2} displayMode />
 
-			{#each sections as section}
-				<section
-					bind:this={section.ref}
-					style="height: 500px; border: 1px solid #ccc; margin-top: 10px;"
-				>
-					<h2>{section.text}</h2>
-				</section>
-			{/each}
-		</div>
+					{#each sections as section}
+						<section
+							bind:this={section.ref}
+							style="height: 500px; border: 1px solid #ccc; margin-top: 10px;"
+						>
+							<h2>{section.text}</h2>
+						</section>
+					{/each}
+				</div>
+			</Tab>
+			<Tab title="Blog" icon="ic:outline-comment">
+				<Title>Blog</Title>
+				<Text text="This is a test page" />
+				<Text text="This is a test page" />
+			</Tab>
+			<Tab title="Updates" icon="ic:round-update">
+				<Title>Updates</Title>
+				<Text text="This is a test page" />
+				<Text text="This is a test page" />
+			</Tab>
+			<Tab title="About" icon="ic:outline-info">
+				<Title>About</Title>
+				<Text text="This is a test page" />
+			</Tab>
+		</Tabs>
 
 		<OnThisPage slot="navbar-right" {sections} />
 	</Main>

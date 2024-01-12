@@ -33,7 +33,7 @@
 	nav {
 		height: 100vh;
 		padding: 5px;
-		padding-top: 50px;
+		padding-top: 60px;
 		position: fixed;
 		width: var(--navbar-width);
 	}
