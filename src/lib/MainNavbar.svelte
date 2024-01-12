@@ -20,22 +20,22 @@
 		<div class="sidebar">
 			<NavLink path="/search">
 				<Icon icon="ic:sharp-search" width="25px" height="25px" style="margin: 10px" />
-				<p>Search</p>
+				<p style="margin: 0">Search</p>
 			</NavLink>
 
 			<NavLink path="/courses">
 				<Icon icon="ic:baseline-dashboard" width="25px" height="25px" style="margin: 10px" />
-				<p>Courses</p>
+				<p style="margin: 0">Courses</p>
 			</NavLink>
 
 			<NavLink path="/created">
 				<Icon icon="ic:baseline-plus" width="25px" height="25px" style="margin: 10px" />
-				<p>Created</p>
+				<p style="margin: 0">Created</p>
 			</NavLink>
 
 			<NavLink path="/settings">
 				<Icon icon="ic:baseline-settings" width="25px" height="25px" style="margin: 10px" />
-				<p>Settings</p>
+				<p style="margin: 0">Settings</p>
 			</NavLink>
 		</div>
 
