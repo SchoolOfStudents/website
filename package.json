@@ -26,6 +26,7 @@
 	"dependencies": {
 		"@iconify/svelte": "^3.1.6",
 		"@svelteuidev/composables": "^0.15.4",
-		"@svelteuidev/core": "^0.15.4"
+		"@svelteuidev/core": "^0.15.4",
+		"svelte-markdown": "^0.4.1"
 	}
 }

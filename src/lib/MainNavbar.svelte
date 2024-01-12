@@ -1,5 +1,4 @@
 <script>
-	import { Text, Stack } from '@svelteuidev/core';
 	import Icon from '@iconify/svelte';
 
 	import logo from '$img/favicon.png';
@@ -8,7 +7,7 @@
 	import NavLink from './NavLink.svelte';
 </script>
 
-<Stack>
+<nav>
 	<div class="main">
 		<a href="/">
 			<div class="logo">
@@ -29,7 +28,7 @@
 			</NavLink>
 
 			<NavLink path="/created">
-				<Icon icon="ic:baseline-plus" width="25px" height="25px" style="margin: 10px" />
+				<Icon icon="ic:baseline-plus" width="25px" height="25px" style="margin:10px" />
 				<p style="margin: 0">Created</p>
 			</NavLink>
 
@@ -50,11 +49,15 @@
 			</div>
 		</div>
 	</div>
-</Stack>
+</nav>
 
 <style>
-	.main {
+	nav {
+		height: 100vh;
 		padding: 5px;
+		position: fixed;
+		background-color: var(--navbar-bg-color);
+		width: var(--navbar-width);
 	}
 
 	/* Logo */

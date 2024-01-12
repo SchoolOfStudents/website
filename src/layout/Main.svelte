@@ -21,9 +21,9 @@
 			id="navbar-right-alert"
 			style="right: 0; width: 40px; transform: translateX(50%);"
 		/>
-		<nav class="navbar" id="navbar-right">
+		<div class="navbar" id="navbar-right">
 			<slot name="navbar-right" />
-		</nav>
+		</div>
 	</div>
 </div>
 
@@ -35,13 +35,11 @@
 
 	.navbar-div {
 		width: auto;
-		background-color: var(--navbar-bg-color);
 		height: 100vh;
 	}
 
 	.navbar {
 		width: var(--navbar-width);
-		background-color: var(--navbar-bg-color);
 		height: 100vh;
 		opacity: 1;
 		transition:
@@ -61,7 +59,6 @@
 		flex-grow: 1;
 		text-align: center;
 		padding: 20px;
-		background-color: var(--content-bg-color);
 	}
 
 	.content-box {
