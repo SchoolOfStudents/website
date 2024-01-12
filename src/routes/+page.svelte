@@ -1,6 +1,7 @@
 <script>
 	import Main from '$layout/Main.svelte';
 	import MainNavbar from '$lib/MainNavbar.svelte';
+	import Content from '$layout/Content.svelte';
 	import OnThisPage from '$lib/OnThisPage.svelte';
 
 	import Title from '$ui/Title.svelte';
@@ -22,13 +23,16 @@
 	<Main>
 		<MainNavbar slot="navbar-left" />
 
+		<Content />
+
 		<div>
 			<Title>School of students</Title>
 
-			<Text
-				text="We believe that only $x^2$ a student can explain to another student any topic in a format
-				that is *understandable*, _easy_, and ~clear~. This is a !mark!"
-			/>
+			<Text text="What can be done:" />
+			<Text text="- bold text, for example, *bold text*" />
+			<Text text="- italic text, for example, _italic text_" />
+			<Text text="- strikethrough text, for example, ~strikethrough text~" />
+			<Text text="- mark text, for example, !mark text!" />
 
 			<Equation math={equation} displayMode />
 			<Equation math={equation2} displayMode />

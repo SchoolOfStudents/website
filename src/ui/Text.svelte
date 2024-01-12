@@ -100,4 +100,8 @@
 	p {
 		text-align: left;
 	}
+
+	strong {
+		font-weight: 900;
+	}
 </style>
