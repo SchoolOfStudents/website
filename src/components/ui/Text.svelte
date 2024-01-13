@@ -1,23 +1,12 @@
 <script>
-	import { onMount, createEventDispatcher } from 'svelte';
 	import Equation from './Equation.svelte';
-	import { Text, Mark } from '@svelteuidev/core';
+	import { Mark } from '@svelteuidev/core';
 
-	export let text = '';
 	let parsedSegments = [];
 
-	const dispatch = createEventDispatcher();
-
-	onMount(() => {
-		parsedSegments = parseText(text);
-		dispatch('update', { parsedSegments });
-	});
-
-	onMount(() => {
-		parsedSegments = parseText(text);
-	});
-
 	function parseText(text) {
+		if (!text) return [];
+
 		const regex = /\$(.*?)\$/g;
 		let lastIndex = 0;
 		let parsedSegments = [];
@@ -76,7 +65,13 @@
 
 		return styleSegments;
 	}
+
+	let data;
+	$: console.log(data?.innerText);
+	$: parsedSegments = parseText(data?.innerText);
 </script>
+
+<span bind:this={data} class="no-display"><slot /></span>
 
 <p>
 	{#each parsedSegments as segment}
@@ -103,5 +98,9 @@
 
 	strong {
 		font-weight: 900;
+	}
+
+	.no-display {
+		display: none;
 	}
 </style>

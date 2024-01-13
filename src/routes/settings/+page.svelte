@@ -1,17 +1,12 @@
 <script>
 	import Main from '$layout/Main.svelte';
-	import MainNavbar from '$lib/MainNavbar.svelte';
+	import MainNavbar from '$layout/MainNavbar.svelte';
 
-	import Title from '$ui/Title.svelte';
-	import Text from '$ui/Text.svelte';
+	import UI from '$/ui';
 </script>
 
-<main>
-	<Main>
-		<MainNavbar slot="navbar-left" />
+<Main>
+	<MainNavbar slot="navbar-left" />
 
-		<div>
-			<Title>Settings</Title>
-		</div>
-	</Main>
-</main>
+	<UI.Title>Settings</UI.Title>
+</Main>

@@ -1,17 +1,14 @@
 <script>
 	import Main from '$layout/Main.svelte';
-	import MainNavbar from '$lib/MainNavbar.svelte';
+	import MainNavbar from '$layout/MainNavbar.svelte';
+	// import OnThisPage from '$layout/OnThisPage.svelte';
 
-	import Title from '$ui/Title.svelte';
-	import Text from '$ui/Text.svelte';
+	import UI from '$/ui';
 </script>
 
-<main>
-	<Main>
-		<MainNavbar slot="navbar-left" />
+<Main>
+	<MainNavbar slot="navbar-left" />
 
-		<div>
-			<Title>List of bought couses</Title>
-		</div>
-	</Main>
-</main>
+	<UI.Title>List of bought couses</UI.Title>
+	<UI.Text>Login to see them</UI.Text>
+</Main>

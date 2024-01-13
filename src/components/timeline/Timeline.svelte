@@ -1,5 +1,5 @@
 <script>
-	import { Text, Timeline } from '@svelteuidev/core';
+	import { Timeline } from '@svelteuidev/core';
 </script>
 
 <div class="timeline-box">

@@ -11,6 +11,25 @@
 			});
 		}
 	}
+
+	/* 
+
+    		<OnThisPage slot="navbar-right" />
+    	let sections = [
+		{ text: 'Create database', ref: null },
+		{ text: 'Create collection', ref: null },
+		{ text: 'Create documents', ref: null },
+		{ text: 'List documents', ref: null }
+	];
+    					{#each sections as section}
+						<section
+							bind:this={section.ref}
+							style="height: 500px; border: 1px solid #ccc; margin-top: 10px;"
+						>
+							<h2>{section.text}</h2>
+						</section>
+					{/each}
+    */
 </script>
 
 <nav>

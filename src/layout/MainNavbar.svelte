@@ -4,7 +4,7 @@
 	import logo from '$img/favicon.png';
 	import profile from '$img/favicon.png';
 
-	import NavLink from './NavLink.svelte';
+	import NavLink from '../components/NavLink.svelte';
 </script>
 
 <nav>
