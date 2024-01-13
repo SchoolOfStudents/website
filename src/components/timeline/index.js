@@ -9,8 +9,8 @@
  */
 
 
-import Timeline from './timeline.svelte';
-import Item from './item.svelte';
+import Timeline from './Timeline.svelte';
+import Item from './Item.svelte';
 
 Timeline.Item = Item;
 
