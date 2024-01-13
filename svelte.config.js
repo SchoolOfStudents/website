@@ -11,6 +11,7 @@ const config = {
             "$ui": "src/ui",
             "$img": "src/img",
             "$layout": "src/layout",
+            "$timeline": "src/timeline",
         },
     }
 };

@@ -2,6 +2,8 @@
 	import Main from '$layout/Main.svelte';
 	import Tabs from '$layout/Tabs.svelte';
 	import Tab from '$layout/Tab.svelte';
+	import Blog from '$lib/Blog.svelte';
+	import Update from '$lib/Update.svelte';
 
 	import MainNavbar from '$lib/MainNavbar.svelte';
 	import OnThisPage from '$lib/OnThisPage.svelte';
@@ -54,13 +56,11 @@
 			</Tab>
 			<Tab title="Blog" icon="ic:outline-comment">
 				<Title>Blog</Title>
-				<Text text="This is a test page" />
-				<Text text="This is a test page" />
+				<Blog />
 			</Tab>
 			<Tab title="Updates" icon="ic:round-update">
 				<Title>Updates</Title>
-				<Text text="This is a test page" />
-				<Text text="This is a test page" />
+				<Update />
 			</Tab>
 			<Tab title="About" icon="ic:outline-info">
 				<Title>About</Title>
