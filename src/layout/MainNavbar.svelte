@@ -1,6 +1,9 @@
 <script>
 	import Icon from '@iconify/svelte';
 
+	import { Divider, Menu, Text } from '@svelteuidev/core';
+	import { Camera, ChatBubble, Gear, MagnifyingGlass, Trash, Width } from 'radix-icons-svelte';
+
 	import logo from '$img/favicon.png';
 	import profile from '$img/favicon.png';
 
@@ -31,17 +34,31 @@
 				<Icon icon="ic:baseline-plus" width="25px" height="25px" style="margin:10px" />
 				<p style="margin: 0">Created</p>
 			</NavLink>
-
-			<NavLink path="/settings">
-				<Icon icon="ic:baseline-settings" width="25px" height="25px" style="margin: 10px" />
-				<p style="margin: 0">Settings</p>
-			</NavLink>
 		</div>
 
 		<div class="profile">
-			<div class="profile-pic">
-				<img src={profile} alt="Profile Picture" aria-hidden="true" />
-			</div>
+			<Menu>
+				<div slot="control" class="profile-pic">
+					<img src={profile} alt="Profile Picture" aria-hidden="true" />
+				</div>
+
+				<Menu.Label>Application</Menu.Label>
+				<Menu.Item icon={Gear}>Settings</Menu.Item>
+				<Menu.Item icon={ChatBubble}>Messages</Menu.Item>
+				<Menu.Item icon={Camera}>Gallery</Menu.Item>
+				<Menu.Item icon={MagnifyingGlass}>
+					<svelte:fragment slot="rightSection">
+						<Text size="xs" color="dimmed">⌘K</Text>
+					</svelte:fragment>
+					Search
+				</Menu.Item>
+
+				<Divider />
+
+				<Menu.Label>Danger zone</Menu.Label>
+				<Menu.Item icon={Width}>Transfer my data</Menu.Item>
+				<Menu.Item color="red" icon={Trash}>Delete my account</Menu.Item>
+			</Menu>
 
 			<div class="user-info">
 				<p class="username">Leonardo Saurwein</p>

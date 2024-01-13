@@ -1,7 +1,6 @@
 <script>
 	import { getContext } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
 	import { expoOut } from 'svelte/easing'; // Changed to expoOut for a different easing effect
 
 	export let title;

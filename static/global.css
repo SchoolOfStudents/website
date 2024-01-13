@@ -54,3 +54,8 @@ body {
     height: 10px;
     /* Also applicable for horizontal scrollbars */
 }
+
+/* Temp, when new components, remove this */
+.dark-theme:active {
+    background-color: #1f1f1f;
+}

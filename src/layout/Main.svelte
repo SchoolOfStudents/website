@@ -66,17 +66,19 @@
 		margin: 0 auto;
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 1200px) {
 		#navbar-right {
 			opacity: 0;
 			width: 0;
 		}
 
+		/*
 		#navbar-right-alert:hover + #navbar-right,
 		#navbar-right:hover {
 			opacity: 1;
 			width: var(--navbar-width);
 		}
+        */
 	}
 
 	@media screen and (max-width: 600px) {
