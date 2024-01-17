@@ -1,10 +1,28 @@
 <script>
 	import SideBar from '$layout/Sidebar.svelte';
 	import Tabs from '$/tabs';
+	import profile from '$img/favicon.png';
+
+	import Blog from '$layout/Blog.svelte';
+	import Updates from '$layout/Updates.svelte';
+	import About from '../layout/About.svelte';
+	import Home from '../layout/Home.svelte';
 </script>
 
 <div class="drawer lg:drawer-open flex flex-col lg:grid">
 	<div class="w-full navbar bg-base-300 lg:hidden flex-1">
+		<div class="join flex-1 inline-flex items-center gap-3">
+			<div class="avatar">
+				<div class="w-12 rounded">
+					<img src={profile} alt="Logo" />
+				</div>
+			</div>
+			<div class="flex flex-col">
+				<div class="text-2xl font-bold text-primary">School Of Students</div>
+				<div class="text-sm text-red-400">Currently in Beta</div>
+			</div>
+		</div>
+
 		<div class="flex-none">
 			<label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
 				<svg
@@ -21,20 +39,28 @@
 				>
 			</label>
 		</div>
-		<div class="flex-1 px-2 mx-2">Navbar Title</div>
 	</div>
 
 	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
 
 	<div class="drawer-content flex flex-col">
 		<!-- Page content here -->
-
-		<Tabs defaultTab="Home">
-			<Tabs.Tab title="Home" icon="ic:baseline-home">Content 1</Tabs.Tab>
-			<Tabs.Tab title="Blog" icon="ic:outline-comment">Content 1</Tabs.Tab>
-			<Tabs.Tab title="Updates" icon="ic:round-update">Content 1</Tabs.Tab>
-			<Tabs.Tab title="About" icon="ic:outline-info">Content 1</Tabs.Tab>
-		</Tabs>
+		<div class="p-3 lg:p-10" style="max-width: 1200px;">
+			<Tabs defaultTab="Home">
+				<Tabs.Tab title="Home" icon="ic:baseline-home">
+					<Home />
+				</Tabs.Tab>
+				<Tabs.Tab title="Blog" icon="ic:outline-comment">
+					<Blog />
+				</Tabs.Tab>
+				<Tabs.Tab title="Updates" icon="ic:round-update">
+					<Updates />
+				</Tabs.Tab>
+				<Tabs.Tab title="About" icon="ic:outline-info">
+					<About />
+				</Tabs.Tab>
+			</Tabs>
+		</div>
 	</div>
 
 	<div class="drawer-side">

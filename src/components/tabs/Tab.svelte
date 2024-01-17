@@ -19,10 +19,7 @@
 </script>
 
 {#if $activeTab === title}
-	<div
-		class="tab-content"
-		in:fly={{ delay: 0, duration: 1000, x: 100, y: 0, opacity: 1, easing: expoOut }}
-	>
+	<div in:fly={{ delay: 0, duration: 1000, x: 100, y: 0, opacity: 1, easing: expoOut }}>
 		<slot />
 	</div>
 {/if}

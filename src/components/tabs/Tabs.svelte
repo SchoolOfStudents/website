@@ -21,18 +21,21 @@
 
 <div role="tablist" class="tabs tabs-bordered">
 	{#each $tabs as tab (tab.title)}
-		<button class="tab" class:tab-active={$activeTab === tab.title} on:click={() => activeTab.set(tab.title)}>
+		<button
+			class="tab"
+			class:tab-active={$activeTab === tab.title}
+			on:click={() => activeTab.set(tab.title)}
+		>
 			{#if tab.icon}<Icon icon={tab.icon} width={20} height={20} style="margin-right: 10px;" />{/if}
-			{tab.title}
+			<div class="hidden sm:block">
+				{tab.title}
+			</div>
 		</button>
 	{/each}
 </div>
 
+<div class="h-8" />
 
-<div class="tab-content">
+<div class="overflow-x-hidden">
 	<slot />
 </div>
-
-<style>
-
-</style>
