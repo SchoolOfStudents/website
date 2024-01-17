@@ -1,7 +1,5 @@
 <script>
-	import { SvelteUIProvider } from '@svelteuidev/core';
+	import '../app.css';
 </script>
 
-<SvelteUIProvider withGlobalStyles themeObserver={'dark'}>
-	<slot />
-</SvelteUIProvider>
+<slot />
