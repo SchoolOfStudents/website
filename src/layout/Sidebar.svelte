@@ -3,17 +3,19 @@
 	import Icon from '@iconify/svelte';
 </script>
 
-<div class="join inline-flex items-center gap-3">
-	<div class="avatar">
-		<div class="w-12 rounded">
-			<img src={profile} alt="logo" />
+<a href="/">
+	<div class="join inline-flex items-center gap-3">
+		<div class="avatar">
+			<div class="w-12 rounded">
+				<img src={profile} alt="logo" />
+			</div>
+		</div>
+		<div class="flex flex-col">
+			<div class="text-2xl font-bold text-white">School Of Students</div>
+			<div class="text-sm text-red-400">Currently in Beta</div>
 		</div>
 	</div>
-	<div class="flex flex-col">
-		<div class="text-2xl font-bold text-white">School Of Students</div>
-		<div class="text-sm text-red-400">Currently in Beta</div>
-	</div>
-</div>
+</a>
 
 <div class="h-8" />
 
