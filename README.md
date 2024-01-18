@@ -1,38 +1,33 @@
-# create-svelte
+# School of students - Website
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+- Main website: https://schoolofstudents.netlify.app
+- Dev website: https://dev-schoolofstudents.netlify.app
 
-## Creating a project
+This is the website for the School of Students. Build with:
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- [SvelteKit](https://kit.svelte.dev/docs/introduction)
+- [TailwindCSS](https://tailwindcss.com/docs/installation)
+- [DaisyUI](https://daisyui.com/docs/use/)
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Fork the dev branch and clone it locally. Then install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
+Create a .env file with the following variables:
 
 ```bash
-npm run build
+PUBLIC_APPWRITE_PROJECT=65a90560ce0c8291a741
+PUBLIC_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
 ```
 
-You can preview the production build with `npm run preview`.
+## Backend
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+The backend is build with [Appwrite](https://appwrite.io/), there are 2 servers:
+
+- Main (for production): 65a9054cdf97bb611418
+- Dev (for development): 65a90560ce0c8291a741
