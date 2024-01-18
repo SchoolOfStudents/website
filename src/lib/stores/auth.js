@@ -39,6 +39,7 @@ const createAuthState = () => {
         /* All the login methods */
         loginWithGitHub: () => {
             try {
+                // account.createOAuth2Session('github');
                 account.createOAuth2Session('github', window.location.href, window.location.href);
             } catch (error) {
                 console.log(error);
@@ -49,42 +50,3 @@ const createAuthState = () => {
 
 
 export const auth = createAuthState();
-
-
-//export const auth = writable(null);
-
-
-/*
-const createState = () => {
-    const { subscribe, set } = writable({
-        username: null,
-    });
-
-    return {
-        subscribe,
-        user: async () => {
-            return await account.get();
-        },
-        login: async () => {
-            await account
-                .createOAuth2Session('github', 'http://localhost:5173/login', 'http://localhost:5173/login')
-                .catch((error) => {
-                    console.error('OAuth login failed:', error);
-                });
-            console.log("here")
-
-            const user = await account.get();
-            console.log(user)
-            auth.init(user);
-        },
-        logout: async () => {
-            await account.deleteSession('current');
-        },
-        init: async (account) => {
-            const user = await account.get();
-            console.log(user)
-            return set({ account });
-        }
-    };
-};
-*/
