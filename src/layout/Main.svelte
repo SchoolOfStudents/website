@@ -10,10 +10,12 @@
 					<img src={profile} alt="Logo" />
 				</div>
 			</div>
-			<div class="flex flex-col">
-				<div class="text-2xl font-bold text-primary">School Of Students</div>
-				<div class="text-sm text-red-400">Currently in Beta</div>
-			</div>
+			<a href="/">
+				<div class="flex flex-col">
+					<div class="text-2xl font-bold text-white">School Of Students</div>
+					<div class="text-sm text-red-400">Currently in Beta</div>
+				</div>
+			</a>
 		</div>
 
 		<div class="flex-none">
