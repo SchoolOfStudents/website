@@ -6,6 +6,7 @@ const createAuthState = () => {
     const { subscribe, set } = writable({
         username: null,
         email: null,
+        avatar: null
     });
 
     return {
@@ -13,11 +14,23 @@ const createAuthState = () => {
         update: async () => {
             try {
                 const user = await account.get();
-                console.log(user);
-                set({ username: user.name, email: user.email });
-            }
-            catch (error) {
-                console.log('Not logged in');
+
+                const { providerAccessToken } = await account.getSession('current');
+
+                const response = await fetch('https://api.github.com/user', {
+                    headers: {
+                        Authorization: `token ${providerAccessToken}`,
+                    },
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    set({ username: user.name, email: user.email, avatar: data.avatar_url });
+                } else {
+                    console.error(`Failed to fetch data. Status code: ${response.status}`);
+                }
+            } catch (error) {
+                console.error('Error:', error);
             }
 
         },
