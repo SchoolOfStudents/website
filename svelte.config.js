@@ -11,6 +11,7 @@ const config = {
             "$": "src/components",
             "$img": "src/lib/img",
             "$layout": "src/layout",
+            "$stores": "src/lib/stores",
         },
     }
 };
