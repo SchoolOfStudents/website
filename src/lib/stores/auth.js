@@ -17,15 +17,15 @@ const createAuthState = () => {
 
                 const { providerAccessToken } = await account.getSession('current');
 
-                const response = await fetch('https://api.github.com/user', {
+                const response = await fetch('https://www.googleapis.com/oauth2/v1/userinfo', {
                     headers: {
-                        Authorization: `token ${providerAccessToken}`,
+                        Authorization: `Bearer ${providerAccessToken}`,
                     },
                 });
 
                 if (response.ok) {
                     const data = await response.json();
-                    set({ username: user.name, email: user.email, avatar: data.avatar_url });
+                    set({ username: user.name, email: user.email, avatar: data.picture });
                 } else {
                     console.error(`Failed to fetch data. Status code: ${response.status}`);
                 }
@@ -50,10 +50,10 @@ const createAuthState = () => {
         },
 
         /* All the login methods */
-        loginWithGitHub: () => {
+        loginWithGoogle: () => {
             try {
                 // account.createOAuth2Session('github');
-                account.createOAuth2Session('github', window.location.href, window.location.href);
+                account.createOAuth2Session('google', window.location.href, window.location.href);
             } catch (error) {
                 console.log(error);
             }
