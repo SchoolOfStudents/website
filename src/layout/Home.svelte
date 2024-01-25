@@ -1,5 +1,12 @@
 <script>
-	import UI from '$/UI';
+	import UI from '$/ui';
+
+	const example = [
+		{
+			type: 'title',
+			content: 'This is a title'
+		}
+	];
 
 	let elements = [
 		{ title: 'This is a title' },
