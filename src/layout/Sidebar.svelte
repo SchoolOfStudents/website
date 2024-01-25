@@ -76,7 +76,7 @@
 	<div class="absolute inset-x-0 bottom-0 inline-flex items-center gap-5 m-4">
 		{#if typeof username === 'object'}
 			<button class="w-full" onclick="modal_login.showModal()">
-				<div role="button" class="btn btn-accent w-full">Login</div>
+				<div role="button" class="btn btn-primary w-full">Login</div>
 			</button>
 			<!-- Modal Content -->
 			<dialog id="modal_login" class="modal">
