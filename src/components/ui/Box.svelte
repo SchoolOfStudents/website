@@ -3,10 +3,10 @@
 	export let center = false;
 </script>
 
-<div class="m-1 p-1">
+<div class="m-0">
 	{#if edit}
 		<div
-			class="rounded-md hover:bg-neutral cursor-pointer"
+			class="p-1.5 rounded-md hover:bg-neutral cursor-pointer"
 			class:flex={center}
 			class:items-center={center}
 			class:justify-center={center}
@@ -14,7 +14,12 @@
 			<slot />
 		</div>
 	{:else}
-		<div class:flex={center} class:items-center={center} class:justify-center={center}>
+		<div
+			class="p-1.5"
+			class:flex={center}
+			class:items-center={center}
+			class:justify-center={center}
+		>
 			<slot />
 		</div>
 	{/if}

@@ -21,7 +21,7 @@
 
 <span bind:this={data} class="hidden"><slot /></span>
 
-<h1 class="text-2xl text-white">
+<h1 class="text-3xl text-white">
 	{#each parsedSegments as segment}
 		{#if segment.type === 'text'}
 			<span>{segment.content}</span>
