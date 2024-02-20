@@ -58,7 +58,7 @@ This is an inline equation: $x^2 + y^2 = z^2$
 
 This is a block equation
 
-$$ x^2 + y^2 = z^2 $$
+$$ x^2 + y^2 = z^2 + k^2$$
 
 $$
 \begin{array}{c}

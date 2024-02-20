@@ -19,6 +19,7 @@ module.exports = {
         extend: {
             typography: {
                 DEFAULT: {
+                    /* Center images for better look */
                     css: {
                         img: {
                             marginLeft: 'auto',
