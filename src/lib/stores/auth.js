@@ -1,4 +1,6 @@
-// import { account } from './appwrite';
+/* 
+
+*/
 import { writable } from 'svelte/store';
 import { account } from '$stores/appwrite';
 

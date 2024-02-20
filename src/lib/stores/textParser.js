@@ -1,3 +1,7 @@
+/* 
+    TODO: clean this up + add some test maybe? 
+*/
+
 function parseText(text) {
     const regex = /\$(.*?)\$/g;
     let lastIndex = 0;

@@ -12,6 +12,7 @@ const config = {
             "$img": "src/lib/img",
             "$layout": "src/layout",
             "$stores": "src/lib/stores",
+            "$plugins": "src/lib/plugins",
         },
     }
 };

@@ -1,3 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Dark Orange Theme */
+:root {
+	--selection: rgba(224, 146, 58, 0.35);
+	--background: oklch(var(--n));
+	--text: oklch(var(--pc));
+	--string: oklch(var(--p));
+	--number: oklch(var(--p));
+	--title: oklch(var(--a));
+	--built_in: oklch(var(--su));
+	--keyword: oklch(var(--s));
+	--function: oklch(var(--suc));
+	--params: oklch(var(--a));
+	--comment: oklch(var(--in));
+}
+
+pre {
+	background: var(--background) !important;
+}
+
+pre code {
+	display: block;
+	overflow-x: auto;
+	padding: 10px;
+	background: var(--background) !important;
+	-webkit-text-size-adjust: none;
+}
+
+pre code *::selection,
+.hljs::selection {
+	background: var(--selection) !important;
+}
+
+.hljs {
+	color: var(--text);
+}
+
+.hljs-string {
+	color: var(--string);
+}
+
+.hljs-number {
+	color: var(--number) !important;
+}
+
+.hljs-title {
+	color: var(--title) !important;
+}
+
+.hljs-built_in {
+	color: var(--built_in) !important;
+}
+
+.hljs-keyword {
+	color: var(--keyword) !important;
+}
+
+.hljs-function > .hljs-keyword {
+	color: var(--function) !important;
+	font-style: italic;
+}
+
+.hljs-params {
+	color: var(--params);
+}
+
+.hljs-comment {
+	color: var(--comment);
+}

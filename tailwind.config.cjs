@@ -1,9 +1,11 @@
+// https://tailwindcss.com/docs/typography-plugin
+
 module.exports = {
     content: ['./src/**/*.{svelte,js,ts}'],
-    plugins: [require("daisyui")],
+    plugins: [require("daisyui"), require('@tailwindcss/typography')],
 
     daisyui: {
-        themes: ["dark"], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+        themes: ["cupcake", "dark"], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
         darkTheme: "dark", // name of one of the included themes for dark mode
         base: true, // applies background color and foreground color for root element by default
         styled: true, // include daisyUI colors and design decisions for all components
@@ -13,4 +15,19 @@ module.exports = {
         themeRoot: ":root", // The element that receives theme color CSS variables
     },
 
+    theme: {
+        extend: {
+            typography: {
+                DEFAULT: {
+                    css: {
+                        img: {
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            display: 'block',
+                        }
+                    },
+                },
+            }
+        }
+    }
 }
