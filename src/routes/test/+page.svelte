@@ -53,6 +53,3 @@
 		{@html result}
 	</article>
 </div>
-
-<style>
-</style>

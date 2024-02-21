@@ -1,31 +1,85 @@
 <script>
 	import Main from '$layout/Main.svelte';
-	import SideBar from '$layout/Sidebar.svelte';
+	import Sidebar from '$layout/Sidebar.svelte';
+	import Card from '$/card';
 
-	import course_img from '$img/course.png';
+	import example from '$img/example.png';
+
+	import { auth } from '$stores/auth';
+	import Icon from '@iconify/svelte';
+
+	$: username = $auth.username;
+	$: avatar = $auth.avatar;
+	$: email = $auth.email;
+
+	console.log(username);
+
+	let courses = [
+		{
+			title: 'Course 1',
+			description: 'This is a course description',
+			button: 'Enroll'
+		},
+		{
+			title: 'Course 2',
+			description: 'This is a course description',
+			button: 'Enroll'
+		}
+	];
 </script>
 
 <Main>
-	<SideBar slot="sidebar" />
+	<Sidebar slot="sidebar" />
 
 	<div slot="content">
-		<h1 class="text-4xl font-bold text-white">Created Courses</h1>
+		<h1 class="text-4xl font-bold">Created</h1>
+		<p class="">List of created courses</p>
+
 		<br />
 
-		<div class="card card-side bg-base-100 shadow-xl bg-neutral">
-			<figure class="h-full w-96">
-				<img class="h-full" src={course_img} alt="Movie" />
-			</figure>
-			<div class="card-body">
-				<h2 class="card-title text-2xl font-bold">Example</h2>
-				<p>
-					This is an example on how a course will look like. This is an example on how a course will
-					look like.
-				</p>
-				<div class="card-actions justify-end">
-					<a class="btn btn-primary" href="/courses/examples">Open</a>
+		<div class="flex items-center space-x-2">
+			<div class="flex-grow relative">
+				<input
+					type="text"
+					placeholder="Search for school, course, teacher..."
+					class="input input-bordered w-full pl-10 pr-10"
+				/>
+				<span class="absolute inset-y-0 left-0 flex items-center justify-center w-14">
+					<Icon icon="mdi:magnify" class="w-6 h-6" />
+				</span>
+			</div>
+			<a href="/courses/create" class="btn btn-primary">Create</a>
+		</div>
+
+		<br />
+
+		{#if typeof username === 'object'}
+			<div class="flex items-center justify-center">
+				<div class="grid w-6/12">
+					<!-- Example card -->
+					<Card
+						title="Example"
+						description="This is an example course description"
+						button="Open"
+						src={example}
+						alt="Example image"
+						link="/courses/1"
+					/>
+
+					<br />
+
+					<!-- Login button -->
+					<button class="w-full" onclick="modal_login.showModal()">
+						<div role="button" class="btn btn-primary w-full">Login to see more</div>
+					</button>
 				</div>
 			</div>
-		</div>
+		{:else}
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+				{#each courses as course}
+					<Card {...course} />
+				{/each}
+			</div>
+		{/if}
 	</div>
 </Main>

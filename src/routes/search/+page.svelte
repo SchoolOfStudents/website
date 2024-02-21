@@ -4,12 +4,28 @@
 
 	import Card from '$/card';
 	import Icon from '@iconify/svelte';
+	import example from '$img/example.png';
+
+	/* Create 10 course dynamically */
+	let courses = Array.from({ length: 10 }, (_, i) => {
+		return {
+			title: `Course ${i + 1}`,
+			description: 'This is a course description',
+			button: 'Enroll',
+			src: example,
+			alt: 'Example image'
+		};
+	});
 </script>
 
 <Main>
 	<SideBar slot="sidebar" />
 
 	<div slot="content">
+		<h1 class="text-4xl font-bold">Search</h1>
+		<p class="">List of all published courses</p>
+		<br />
+
 		<div class="relative">
 			<input
 				type="text"
@@ -20,14 +36,17 @@
 				<Icon icon="mdi:magnify" class="w-6 h-6 flex" />
 			</span>
 		</div>
-		<div class="h-4" />
+
+		<br />
+
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-			<Card />
-			<Card />
-			<Card />
-			<Card />
+			{#each courses as course}
+				<Card {...course} />
+			{/each}
 		</div>
-		<div class="h-4" />
+
+		<br />
+
 		<div class="join w-full justify-center">
 			<button class="join-item btn">1</button>
 			<button class="join-item btn">2</button>
