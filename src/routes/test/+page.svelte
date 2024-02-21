@@ -11,7 +11,6 @@
 	import mermaid_plugin from '$plugins/meramid';
 
 	import mak from './mak.md?raw';
-	const currentTheme = 'dark';
 
 	const md = markdownit({
 		highlight: function (str, lang) {

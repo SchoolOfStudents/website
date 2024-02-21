@@ -4,6 +4,8 @@
 	import { onMount } from 'svelte';
 
 	onMount(async () => {
+		const currentTheme = localStorage.getItem('theme') || 'night';
+		document.querySelector('html').setAttribute('data-theme', currentTheme);
 		await auth.update();
 	});
 </script>

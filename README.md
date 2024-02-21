@@ -31,3 +31,5 @@ The backend is build with [Appwrite](https://appwrite.io/), there are 2 servers:
 
 - Main (for production): 65a9054cdf97bb611418
 - Dev (for development): 65a90560ce0c8291a741
+
+// document.querySelector('html').setAttribute('data-theme', currentTheme);

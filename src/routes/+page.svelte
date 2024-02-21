@@ -5,8 +5,10 @@
 
 	import Blog from '$layout/Blog.svelte';
 	import Updates from '$layout/Updates.svelte';
-	import About from '../layout/About.svelte';
-	import Home from '../layout/Home.svelte';
+
+	import Markdown from '$/markdown.svelte';
+	import HomeMarkdown from './home.md?raw';
+	import AboutMarkdown from './about.md?raw';
 </script>
 
 <Main>
@@ -15,7 +17,9 @@
 	<div slot="content">
 		<Tabs defaultTab="Home">
 			<Tabs.Tab title="Home" icon="ic:baseline-home">
-				<Home />
+				<div class="flex items-center justify-center">
+					<Markdown data={HomeMarkdown} />
+				</div>
 			</Tabs.Tab>
 			<Tabs.Tab title="Blog" icon="ic:outline-comment">
 				<Blog />
@@ -24,7 +28,9 @@
 				<Updates />
 			</Tabs.Tab>
 			<Tabs.Tab title="About" icon="ic:outline-info">
-				<About />
+				<div class="flex items-center justify-center">
+					<Markdown data={AboutMarkdown} />
+				</div>
 			</Tabs.Tab>
 		</Tabs>
 	</div>
